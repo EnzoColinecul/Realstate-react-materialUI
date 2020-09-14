@@ -83,11 +83,11 @@ export default function Header(props) {
             <HideOnScroll {...props}>
                 <AppBar position='sticky'>
                     <ToolBar>
+                        <DrawerLeft/>
                         <Typography variant='h6' noWrap>
                             Header
                         </Typography>
                     </ToolBar>
-                        <DrawerLeft/>
                 </AppBar>
             </HideOnScroll>
             <ToolBar className={classes.toolbar} id="back-to-top-anchor" />
