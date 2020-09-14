@@ -1,14 +1,15 @@
-import React from 'react';
+import React from 'react'
+import DrawerLeft from './DrawerLeft'
+import PropTypes from 'prop-types'
 import AppBar from '@material-ui/core/AppBar'
 import ToolBar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Slide from '@material-ui/core/Slide'
 import useScrollTrigger from '@material-ui/core/useScrollTrigger'
-import PropTypes from 'prop-types'
 import Fab from '@material-ui/core/Fab'
 import Zoom from '@material-ui/core/Zoom'
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
 import { makeStyles } from '@material-ui/core/styles'
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -18,6 +19,12 @@ const useStyles = makeStyles((theme) => ({
     },
     toolbar: {
         minHeight: '0'
+    },
+    settingsIcon: {
+        alignItems: 'right',
+        height: '100%',
+        display: 'flex',
+        justifyContent: 'right'
     }
 }))
 
@@ -78,8 +85,9 @@ export default function Header(props) {
                     <ToolBar>
                         <Typography variant='h6' noWrap>
                             Header
-                    </Typography>
+                        </Typography>
                     </ToolBar>
+                        <DrawerLeft/>
                 </AppBar>
             </HideOnScroll>
             <ToolBar className={classes.toolbar} id="back-to-top-anchor" />

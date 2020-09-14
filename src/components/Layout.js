@@ -32,11 +32,11 @@ export default function Layout({ classes }) {
         </div>
             <Container className={classes.container} maxWidth="md">
                 <Typography>
-                    Hello World3
+                    Hello World
                 </Typography>
                 <div className={classes.heroButtons}>
                     <Grid container spacing={1} justify="center">
-                        <Grid item>
+                        <Grid item> 
                             <Button variant="contained" color="primary">
                                 Quiero Alquilar
                             </Button>
@@ -44,7 +44,7 @@ export default function Layout({ classes }) {
                         <Grid item>
                             <Button variant="outlined" color="primary">
                                 Quiero Comprar
-                        </Button>
+                            </Button>
                         </Grid>
                     </Grid>
                 </div>
