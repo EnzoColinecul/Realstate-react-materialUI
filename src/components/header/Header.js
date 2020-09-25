@@ -17,16 +17,19 @@ const useStyles = makeStyles((theme) => ({
         position: 'fixed',
         bottom: theme.spacing(6),
         right: theme.spacing(2),
+        flexGrow: 1,
+
+    },
+    title: {
+        flexGrow: 1,
+        display: 'none',
+        [theme.breakpoints.up('sm')]: {
+            display: 'block',
+        },
     },
     toolbar: {
         minHeight: '0'
     },
-    settingsIcon: {
-        alignItems: 'right',
-        height: '100%',
-        display: 'flex',
-        justifyContent: 'right'
-    }
 }))
 
 
@@ -84,11 +87,11 @@ export default function Header(props) {
             <HideOnScroll {...props}>
                 <AppBar position='sticky'>
                     <ToolBar>
-                        <DrawerLeft/>
-                        <Typography variant='h6' noWrap>
+                        <DrawerLeft />
+                        <Typography classname={classes.title} variant='h6' noWrap>
                             Header
                         </Typography>
-                        <SearchBar/>
+                        <SearchBar />
                     </ToolBar>
                 </AppBar>
             </HideOnScroll>

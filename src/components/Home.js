@@ -5,7 +5,6 @@ import Layout from './Layout';
 import Header from './header/Header'
 import Cards from './Cards';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography'
 
 function Home() {
     const classes = useStyles();

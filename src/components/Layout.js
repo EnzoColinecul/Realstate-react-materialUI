@@ -6,7 +6,6 @@ import Container from '@material-ui/core/Container';
 import AwesomeSlider from 'react-awesome-slider';
 import withAutoPlay from 'react-awesome-slider/dist/autoplay'
 import 'react-awesome-slider/dist/styles.css';
-import { Card } from '@material-ui/core';
 
 
 
