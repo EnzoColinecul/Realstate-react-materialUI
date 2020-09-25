@@ -1,5 +1,6 @@
 import React from 'react'
 import DrawerLeft from './DrawerLeft'
+import SearchBar from './SearchBar'
 import PropTypes from 'prop-types'
 import AppBar from '@material-ui/core/AppBar'
 import ToolBar from '@material-ui/core/Toolbar'
@@ -87,6 +88,7 @@ export default function Header(props) {
                         <Typography variant='h6' noWrap>
                             Header
                         </Typography>
+                        <SearchBar/>
                     </ToolBar>
                 </AppBar>
             </HideOnScroll>
