@@ -2,13 +2,14 @@ import React from 'react'
 import DrawerLeft from './DrawerLeft'
 import SearchBar from './SearchBar'
 import PropTypes from 'prop-types'
-import AppBar from '@material-ui/core/AppBar'
-import ToolBar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
-import Slide from '@material-ui/core/Slide'
-import useScrollTrigger from '@material-ui/core/useScrollTrigger'
-import Fab from '@material-ui/core/Fab'
-import Zoom from '@material-ui/core/Zoom'
+import { 
+    AppBar,
+    Toolbar,
+    Slide,
+    useScrollTrigger,
+    Fab,
+    Zoom
+} from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
 
@@ -20,16 +21,12 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
 
     },
-    title: {
-        flexGrow: 1,
-        display: 'none',
-        [theme.breakpoints.up('sm')]: {
-            display: 'block',
-        },
-    },
     toolbar: {
-        minHeight: '0'
+        minHeight: '0',
     },
+    appbar: {
+        padding: theme.spacing(1,0)
+    }
 }))
 
 
@@ -85,17 +82,14 @@ export default function Header(props) {
     return (
         <>
             <HideOnScroll {...props}>
-                <AppBar position='sticky'>
-                    <ToolBar>
+                <AppBar className={classes.appbar} position='sticky'>
+                    <Toolbar className={classes.toolbar}>
                         <DrawerLeft />
-                        <Typography classname={classes.title} variant='h6' noWrap>
-                            Header
-                        </Typography>
                         <SearchBar />
-                    </ToolBar>
+                    </Toolbar>
                 </AppBar>
             </HideOnScroll>
-            <ToolBar className={classes.toolbar} id="back-to-top-anchor" />
+            <Toolbar className={classes.toolbar} id="back-to-top-anchor" />
             <ScrollTop {...props} >
                 <Fab color="primary" size="medium" aria-label="scroll back to top">
                     <KeyboardArrowUpIcon />

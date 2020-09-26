@@ -5,6 +5,7 @@ import { fade, makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
     search: {
+
         position: 'relative',
         borderRadius: theme.shape.borderRadius,
         backgroundColor: fade(theme.palette.common.white, 0.15),
@@ -31,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
         color: 'inherit',
     },
     inputInput: {
-        padding: theme.spacing(1, 1, 1, 0),
+        padding: theme.spacing(1, 4, 1, 0),
         paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
         transition: theme.transitions.create('width'),
         width: '100%',
@@ -52,7 +53,7 @@ export default function SearchBar() {
                 <SearchIcon />
             </div>
             <InputBase
-                placeholder="Buscar..."
+                placeholder="Buscar en InmobilAr"
                 classes={{
                     root: classes.inputRoot,
                     input: classes.inputInput,
