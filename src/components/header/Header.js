@@ -1,6 +1,7 @@
 import React from 'react'
 import DrawerLeft from './DrawerLeft'
 import SearchBar from './SearchBar'
+import Filter from './Filter'
 import PropTypes from 'prop-types'
 import { 
     AppBar,
@@ -8,7 +9,7 @@ import {
     Slide,
     useScrollTrigger,
     Fab,
-    Zoom
+    Zoom,
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
@@ -22,10 +23,11 @@ const useStyles = makeStyles((theme) => ({
 
     },
     toolbar: {
+        flexFlow: 0,
         minHeight: '0',
     },
     appbar: {
-        padding: theme.spacing(1,0)
+        padding: theme.spacing(1,0,4)
     }
 }))
 
@@ -86,6 +88,7 @@ export default function Header(props) {
                     <Toolbar className={classes.toolbar}>
                         <DrawerLeft />
                         <SearchBar />
+                        <Filter/>
                     </Toolbar>
                 </AppBar>
             </HideOnScroll>
