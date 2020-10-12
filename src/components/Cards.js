@@ -1,20 +1,28 @@
 import React from 'react'
-import Container from '@material-ui/core/Container'
-import Grid from '@material-ui/core/Grid'
-import CardContent from '@material-ui/core/CardContent'
-import Card from '@material-ui/core/Card'
-import CardMedia from '@material-ui/core/CardMedia'
-import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
-import { CardActions } from '@material-ui/core'
+import {
+    Container,
+    Grid,
+    CardContent,
+    Card,
+    CardMedia,
+    Typography,
+    Button,
+    CardActions
+} from '@material-ui/core'
+import {
+    Room,
+    AirlineSeatIndividualSuite,
+} from '@material-ui/icons'
+import ReadMoreReact from 'read-more-react'
 
-
+const text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed magna non nisl vulputate lacinia. Nulla ultrices congue nunc, a semper elit egestas quis. Phasellus finibus fermentum magna non cursus. Nam viverra vestibulum tellus, a dapibus eros lacinia in. Aliquam ex justo, commodo quis ex quis, tempor scelerisque nunc. Morbi volutpat finibus hendrerit. Vestibulum ex risus, scelerisque eu pellentesque et, pretium in enim. In maximus blandit metus ac tristique. Nam elementum sapien a leo facilisis euismod et sit amet neque. Maecenas et sapien tortor. Vestibulum vitae leo nunc. Phasellus gravida cursus iaculis. Aliquam nec lobortis eros.";
 const cards = [1, 2, 3, 4, 5, 6];
+const numberRooms = 0;
 export default function Cards({ classes }) {
     return (
         <Container className={classes.cardGrid} maxWidth="md">
             <Typography align="center" variant="body1" gutterBottom>
-                Ultimos inmuebles cargados
+                Últimos inmuebles cargados
             </Typography>
             <Grid container spacing={4}>
                 {cards.map((card) => (
@@ -26,16 +34,36 @@ export default function Cards({ classes }) {
                                 title="Casa en venta"
                             />
                             <CardContent className={classes.cardContent}>
-                                <Typography gutterBottom variant="h5" component="h2" align="left">
+                                <Typography variant="h5" component="h2" align="left" gutterBottom>
                                     Casa en venta
                                 </Typography>
-                                <Typography align="left" gutterBottom>
+                                <Typography variant="body1" align="left" gutterBottom>
+                                    <Room />
                                     Barrio malvinas, Esquel, Chubut
                                 </Typography>
+                                <Typography variant="body1" color="textSecondary" align="left">
+                                    <ReadMoreReact
+                                        readMoreText={false}
+                                        text={text}
+                                    />
+                                </Typography>
+                                {numberRooms > 0 ? (
+                                    <div className={classes.info}>
+                                        <div className={classes.infoIcon}>
+                                            <AirlineSeatIndividualSuite />
+                                        </div>
+                                        <div className={classes.infoText}>
+                                            <Typography variant="body1">
+                                                {numberRooms}
+                                            </Typography>
+                                        </div>
+                                    </div>
+                                ) : (null)
+                                }
                             </CardContent>
                             <div className={classes.heroButtons}>
                                 <CardActions>
-                                    <Button size="small"  color="primary" variant="contained">
+                                    <Button size="small" color="primary" variant="contained">
                                         Ver mas
                                     </Button>
                                 </CardActions>
