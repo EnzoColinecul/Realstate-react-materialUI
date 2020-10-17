@@ -1,7 +1,6 @@
 import React from 'react'
 import DrawerLeft from './DrawerLeft'
 import SearchBar from './SearchBar'
-import Filter from './Filter'
 import PropTypes from 'prop-types'
 import { 
     AppBar,
@@ -88,7 +87,6 @@ export default function Header(props) {
                     <Toolbar className={classes.toolbar}>
                         <DrawerLeft />
                         <SearchBar />
-                        <Filter/>
                     </Toolbar>
                 </AppBar>
             </HideOnScroll>

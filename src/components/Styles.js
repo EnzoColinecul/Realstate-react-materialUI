@@ -44,9 +44,8 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   infoText:{
-    alignItems:'left',
-    justifyContent:'left',
-    width: '25%',
+    display: 'inline-flex',
+    width: '90%',
   },
   infoIcon: {
     height: '100%',
@@ -55,11 +54,21 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     pointerEvents: 'none',
+    },
+  li: {
+    listStyle: 'none',
+    padding: theme.spacing(0,2),
   },
   footer: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
+  button: {
+    width: '100%',
+  },
+  buttonWhatsapp: {
+    marginBottom: '8px !important'
+  }
 }));
 
 export default useStyles;
