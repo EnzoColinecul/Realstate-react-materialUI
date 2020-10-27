@@ -21,7 +21,7 @@ const cards = [1, 2, 3, 4, 5, 6];
 const cardsInfo = {
     rooms: 1,
     bathrooms: 1,
-    price: 4000
+    price: "40.000"
 };
 export default function Cards({ classes }) {
     return (
@@ -53,35 +53,32 @@ export default function Cards({ classes }) {
                                     />
                                 </Typography>
                                 {cardsInfo.rooms > 0 ? (
-                                    <>
-                                        <div className={classes.info}>
-                                            <div className={classes.infoIcon}>
-                                                <AirlineSeatIndividualSuite color="secondary" />
-                                            </div>
-                                            <div className={classes.infoText}>
-                                                <li className={classes.li}>
-                                                    <Typography variant="body1">
-                                                        {cardsInfo.rooms}
-                                                    </Typography>
-                                                </li>
-                                            </div>
+                                    <div className={classes.info}>
+                                        <div className={classes.infoIcon}>
+                                            <AirlineSeatIndividualSuite color="secondary" />
                                         </div>
-
-                                    </>
+                                        <div className={classes.infoText}>
+                                            <li className={classes.li}>
+                                                <Typography variant="body1">
+                                                    {cardsInfo.rooms}
+                                                </Typography>
+                                            </li>
+                                        </div>
+                                    </div>
                                 ) : (null)
                                 }
                                 <div className={classes.heroButtons}>
                                     <Typography variant="h5" align="left">
-                                        ${cardsInfo.price}
+                                        USD {cardsInfo.price}
                                     </Typography>
                                 </div>
                             </CardContent>
                             <CardActions>
                                 <div className={classes.button}>
-                                        <Button className={classes.buttonWhatsapp}>
-                                            <img src={whatsappLogo} alt="whatsapp-logo" />
+                                    <Button fullWidth variant="outlined" className={classes.buttonWhatsapp}>
+                                        <img src={whatsappLogo} alt="whatsapp-logo" />
                                         Consultar
-                                        </Button>
+                                    </Button>
                                     <Button fullWidth color="primary" variant="contained">
                                         Ver más
                                     </Button>

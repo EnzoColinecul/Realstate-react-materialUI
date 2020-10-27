@@ -2,7 +2,7 @@ import React from 'react'
 import DrawerLeft from './DrawerLeft'
 import SearchBar from './SearchBar'
 import PropTypes from 'prop-types'
-import { 
+import {
     AppBar,
     Toolbar,
     Slide,
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
         minHeight: '0',
     },
     appbar: {
-        padding: theme.spacing(1,0,4)
+        padding: theme.spacing(1, 0, 4)
     }
 }))
 
@@ -78,15 +78,19 @@ ScrollTop.prototype = {
 }
 
 export default function Header(props) {
-    const classes = useStyles();
-
+    const classes = useStyles()
+    const { home } = props
     return (
         <>
             <HideOnScroll {...props}>
                 <AppBar className={classes.appbar} position='sticky'>
                     <Toolbar className={classes.toolbar}>
-                        <DrawerLeft />
-                        <SearchBar />
+                        {home && 
+                            <>
+                                <DrawerLeft />
+                                <SearchBar />
+                            </>
+                        }
                     </Toolbar>
                 </AppBar>
             </HideOnScroll>

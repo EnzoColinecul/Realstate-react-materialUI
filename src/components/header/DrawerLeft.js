@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
-import Drawer from '@material-ui/core/Drawer'
-import List from '@material-ui/core/List'
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider'
-import IconButton from '@material-ui/core/IconButton'
+import {
+    Drawer,
+    List,
+    IconButton,
+    ListItemIcon,
+    ListItemText,
+    Divider
+} from '@material-ui/core/'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import MenuIcon from '@material-ui/icons/Menu'
-import InboxIcon from '@material-ui/icons/Inbox'
+import SettingsIcon from '@material-ui/icons/Settings'
 
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import { ListItem } from '@material-ui/core';
@@ -72,9 +74,9 @@ export default function DrawerLeft() {
                 <List>
                     <ListItem button>
                         <ListItemIcon>
-                            <InboxIcon/>
+                            <SettingsIcon/>
                         </ListItemIcon>
-                        <ListItemText>Lea topu</ListItemText>
+                        <ListItemText>Ingresar como Administrador</ListItemText>
                     </ListItem>
                 </List>
             </Drawer>

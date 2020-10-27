@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 0, 6),
   },
   heroButtons: {
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(2),
   },
   cardGrid: {
     paddingTop: theme.spacing(8),
@@ -32,7 +32,6 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   container: {
-    margin: '18%',
     height: '100%'
   },
   info: {
@@ -68,6 +67,21 @@ const useStyles = makeStyles((theme) => ({
   },
   buttonWhatsapp: {
     marginBottom: '8px !important'
+  },
+  form: {
+    width: '100%',
+    marginTop: theme.spacing(2),
+  },
+  paper: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginTop: theme.spacing(8)
+  },
+  loginButton: {
+    marginTop: theme.spacing(4),
+    marginBottom: theme.spacing(5)
   }
 }));
 
