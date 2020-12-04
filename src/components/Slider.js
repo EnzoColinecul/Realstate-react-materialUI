@@ -1,16 +1,14 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import AwesomeSlider from 'react-awesome-slider';
 import withAutoPlay from 'react-awesome-slider/dist/autoplay'
 import 'react-awesome-slider/dist/styles.css';
-import { Card } from '@material-ui/core';
 
 
 
-export default function Layout({ classes }) {
+export default function Slider({ classes }) {
 
     const AutoplaySlider = withAutoPlay(AwesomeSlider);
 
@@ -18,22 +16,19 @@ export default function Layout({ classes }) {
 
     return (
         <>
-        <div className="slider">
-            <AutoplaySlider
-                play={true}
-                bullets={false}
-                interval={3000}
-                cancelOnInteraction={false}
-            >
-                {slider.map((slider) => (
-                    <div key={slider} data-src="https://images.adsttc.com/media/images/5d34/e507/284d/d109/5600/0240/newsletter/_FI.jpg?1563747560" />
-                ))}
-            </AutoplaySlider>
-        </div>
+            <div className="slider">
+                <AutoplaySlider
+                    play={true}
+                    bullets={false}
+                    interval={3000}
+                    cancelOnInteraction={false}
+                >
+                    {slider.map((slider) => (
+                        <div key={slider} data-src="https://images.adsttc.com/media/images/5d34/e507/284d/d109/5600/0240/newsletter/_FI.jpg?1563747560" />
+                    ))}
+                </AutoplaySlider>
+            </div>
             <Container className={classes.container} maxWidth="md">
-                <Typography>
-                    Hello World3
-                </Typography>
                 <div className={classes.heroButtons}>
                     <Grid container spacing={1} justify="center">
                         <Grid item>
@@ -44,7 +39,7 @@ export default function Layout({ classes }) {
                         <Grid item>
                             <Button variant="outlined" color="primary">
                                 Quiero Comprar
-                        </Button>
+                            </Button>
                         </Grid>
                     </Grid>
                 </div>
