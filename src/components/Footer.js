@@ -6,9 +6,6 @@ import Link from '@material-ui/core/Link';
 function Footer() {
     return (
         <>
-            <Typography variant="h6" align="center" gutterBottom>
-                Footer
-             </Typography>
             <Typography variant="body2" color="textSecondary">
                 {'Copyright '}&copy;
             {' '}

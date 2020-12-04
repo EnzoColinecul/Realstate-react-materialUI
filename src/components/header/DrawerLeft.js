@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom' 
 import {
     Drawer,
     List,
@@ -54,8 +55,8 @@ export default function DrawerLeft() {
                 onClick={handleDrawerOpen}
                 edge="start"
             >
-            <MenuIcon/>
-                </IconButton>
+                <MenuIcon/>
+            </IconButton>
            <Drawer
                 className={classes.drawer}
                 variant="persistent"
@@ -76,7 +77,17 @@ export default function DrawerLeft() {
                         <ListItemIcon>
                             <SettingsIcon/>
                         </ListItemIcon>
-                        <ListItemText>Ingresar como Administrador</ListItemText>
+                        <ListItemText>
+                            <Link 
+                            to="/admin"
+                            style={{
+                                textDecoration: 'none ',
+                                color: 'black'
+                            }}
+                            >
+                                Ingresar como Administrador
+                            </Link>
+                        </ListItemText>
                     </ListItem>
                 </List>
             </Drawer>

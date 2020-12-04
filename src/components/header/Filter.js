@@ -7,7 +7,8 @@ const useStyles = makeStyles((theme) => ({
     button: {
         flexGrow: 1,
         display: 'block',
-        padding: theme.spacing(0,2)
+        padding: theme.spacing(0, 2),
+        marginTop: theme.spacing(1)
     }
 }))
 
@@ -16,7 +17,7 @@ export default function Filter() {
 
     return (
         <div className={classes.button}>
-            <Button startIcon={<FilterIcon/>} variant="text">
+            <Button size='small' startIcon={<FilterIcon />} color='primary' variant='contained'>
                 Filtrar
             </Button>
         </div>

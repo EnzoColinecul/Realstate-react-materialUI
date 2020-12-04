@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
       width: 'auto',
     }
   },
-  infoText:{
+  infoText: {
     display: 'inline-flex',
     width: '90%',
   },
@@ -53,10 +53,10 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     pointerEvents: 'none',
-    },
+  },
   li: {
     listStyle: 'none',
-    padding: theme.spacing(0,2),
+    padding: theme.spacing(0, 2),
   },
   footer: {
     backgroundColor: theme.palette.background.paper,
@@ -80,8 +80,10 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(8)
   },
   loginButton: {
-    marginTop: theme.spacing(4),
-    marginBottom: theme.spacing(5)
+    margin: '40px !important'
+  },
+  textField: {
+    flexDirection: 'column',
   }
 }));
 

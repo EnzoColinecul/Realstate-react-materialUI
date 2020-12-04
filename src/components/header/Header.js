@@ -1,6 +1,8 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import DrawerLeft from './DrawerLeft'
 import SearchBar from './SearchBar'
+import Filter from './Filter'
 import PropTypes from 'prop-types'
 import {
     AppBar,
@@ -9,9 +11,13 @@ import {
     useScrollTrigger,
     Fab,
     Zoom,
+    IconButton
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
+import {
+    KeyboardArrowUp,
+    ArrowBack
+} from '@material-ui/icons/'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -26,9 +32,12 @@ const useStyles = makeStyles((theme) => ({
         minHeight: '0',
     },
     appbar: {
-        padding: theme.spacing(1, 0, 4)
+        padding: theme.spacing(0, 0, 1)
+    },
+    searchFilter: {
+        padding: theme.spacing(4, 0, 0, 0)
     }
-}))
+}));
 
 
 function HideOnScroll(props) {
@@ -79,17 +88,38 @@ ScrollTop.prototype = {
 
 export default function Header(props) {
     const classes = useStyles()
-    const { home } = props
+    const { home, arrowBack } = props
+
     return (
         <>
             <HideOnScroll {...props}>
                 <AppBar className={classes.appbar} position='sticky'>
                     <Toolbar className={classes.toolbar}>
-                        {home && 
+                        {home &&
                             <>
                                 <DrawerLeft />
-                                <SearchBar />
+                                <div className={classes.searchFilter}>
+                                    <SearchBar />
+                                    <Filter />
+                                </div>
                             </>
+                        }
+                        {arrowBack &&
+                            <IconButton
+                                aria-label="back arrow"
+                                color="inherit"
+                                edge="start"
+                            >
+                                <NavLink
+                                    to="/home"
+                                    style={{
+                                        textDecoration: 'none ',
+                                        color: 'white'
+                                    }}
+                                >
+                                    <ArrowBack />
+                                </NavLink>
+                            </IconButton>
                         }
                     </Toolbar>
                 </AppBar>
@@ -97,7 +127,7 @@ export default function Header(props) {
             <Toolbar className={classes.toolbar} id="back-to-top-anchor" />
             <ScrollTop {...props} >
                 <Fab color="primary" size="medium" aria-label="scroll back to top">
-                    <KeyboardArrowUpIcon />
+                    <KeyboardArrowUp />
                 </Fab>
             </ScrollTop>
         </>

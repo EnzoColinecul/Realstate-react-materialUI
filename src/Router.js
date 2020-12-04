@@ -12,10 +12,11 @@ import CssBassline from '@material-ui/core/CssBaseline'
 
 
 //Components
-import useStyles from './components/Styles';
+import useStyles from './components/Styles'
 import Login from './components/Login'
 import Home from './components/Home'
 import Footer from './components/Footer'
+import AdminHome from './components/AdminHome'
 
 const theme = createMuiTheme({
     palette: {
@@ -40,8 +41,9 @@ function Router() {
                 <CssBassline />
                 <BrowserRouter>
                     <Switch>
-                        <Route exact path="/Admin" component={Login} />
-                        <Route exact path="/Home" component={Home} />
+                        <Route exact path="/admin" component={Login} />
+                        <Route exact path="/admin-home" component={AdminHome} />
+                        <Route exact path="/home" component={Home} />
                         <Route exact path="/" component={Home} />
                     </Switch>
                 </BrowserRouter>
