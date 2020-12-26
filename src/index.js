@@ -18,7 +18,7 @@ const style = {
 ReactDOM.render(
   <React.StrictMode>
     <FirebaseAppProvider firebaseConfig={firebaseConfig}>
-      <Suspense fallback={<img style={style} src={Spinner} />}>
+      <Suspense fallback={<img alt="loading" style={style} src={Spinner} />}>
         <App />
       </Suspense>
     </FirebaseAppProvider>

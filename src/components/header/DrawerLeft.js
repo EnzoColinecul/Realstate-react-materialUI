@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom' 
+import { Link } from 'react-router-dom'
 import {
     Drawer,
     List,
@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
         padding: theme.spacing(0, 1),
-        // necessary for content to be below app bar
         ...theme.mixins.toolbar,
         justifyContent: 'flex-end',
     },
@@ -47,17 +46,22 @@ export default function DrawerLeft() {
         setOpen(false);
     }
 
+    const style = {
+        textDecoration: 'none ',
+        color: 'black'
+    }
+
     return (
-        <>  
+        <>
             <IconButton
                 color="inherit"
                 aria-label="open drawer"
                 onClick={handleDrawerOpen}
                 edge="start"
             >
-                <MenuIcon/>
+                <MenuIcon />
             </IconButton>
-           <Drawer
+            <Drawer
                 className={classes.drawer}
                 variant="persistent"
                 anchor="left"
@@ -75,16 +79,10 @@ export default function DrawerLeft() {
                 <List>
                     <ListItem button>
                         <ListItemIcon>
-                            <SettingsIcon/>
+                            <SettingsIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            <Link 
-                            to="/admin"
-                            style={{
-                                textDecoration: 'none ',
-                                color: 'black'
-                            }}
-                            >
+                            <Link to="/admin" style={style}>
                                 Ingresar como Administrador
                             </Link>
                         </ListItemText>

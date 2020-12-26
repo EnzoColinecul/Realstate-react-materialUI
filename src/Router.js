@@ -16,7 +16,9 @@ import useStyles from './components/Styles'
 import Login from './components/Login'
 import Home from './components/Home'
 import Footer from './components/Footer'
-import AdminHome from './components/AdminHome'
+import AdminHome from './components/admin/AdminHome'
+import NewProperty from './components/admin/NewProperty'
+import Steps from './components/admin/Steps'
 
 const theme = createMuiTheme({
     palette: {
@@ -42,8 +44,9 @@ function Router() {
                 <BrowserRouter>
                     <Switch>
                         <Route exact path="/admin" component={Login} />
-                        <Route exact path="/admin-home" component={AdminHome} />
+                        <Route exact path="/admin/home" component={AdminHome} />
                         <Route exact path="/home" component={Home} />
+                        <Route exact path="/admin/newProperty" component={Steps} />
                         <Route exact path="/" component={Home} />
                     </Switch>
                 </BrowserRouter>
