@@ -6,6 +6,7 @@ import {
   FirebaseAppProvider
 } from 'reactfire'
 import firebaseConfig from './firebase/firebase-config'
+require('dotenv').config()
 
 const style = {
   width: '50%',

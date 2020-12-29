@@ -1,5 +1,5 @@
 export default {
-  apiKey: "AIzaSyDdCWdgbLekuAZCAdFpQ8nXMM4Ct1XD778",
+  apiKey: `${process.env}`,
   authDomain: "login-inmobilar.firebaseapp.com",
   databaseURL: "https://login-inmobilar.firebaseio.com",
   projectId: "login-inmobilar",
