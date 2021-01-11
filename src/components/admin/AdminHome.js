@@ -2,17 +2,12 @@ import React from 'react'
 import { Redirect } from 'react-router-dom'
 import {
     Button,
-    Typography
 } from '@material-ui/core/'
 import { useUser, useFirebaseApp } from 'reactfire'
-import Header from './header/Header'
-import memeImage from '../assets/images/meme-test.jpg'
+import Header from '../header/Header'
+
 
 export default function AdminHome(props) {
-
-    const style = {
-        width: '100%'
-    }
 
     const firebase = useFirebaseApp()
 
@@ -27,10 +22,7 @@ export default function AdminHome(props) {
                 !user &&
                 <Redirect to="/admin/" />
             }
-            <Header />
-            <img src={memeImage} style={style} />
-            <Typography variant="h5">Bien ahii rey</Typography>
-            <Typography variant="h5">ingresaste como administrador</Typography>
+            <Header admin="true" />
             <Button
                 color='primary'
                 variant='contained'

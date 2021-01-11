@@ -28,7 +28,7 @@ export default function Login(props) {
         <>
             {
                 user &&
-                <Redirect to="/admin-home/" />
+                <Redirect to="/admin/home/" />
             }
             <Header arrowBack="true" />
             <Container className={classes.container} maxWidth="md" >
@@ -36,7 +36,7 @@ export default function Login(props) {
                     <Typography variant="h5" align="center">
                         Ingresar como Administrador
                     </Typography>
-                    <form className={classes.form} >
+                    <form className={classes.form} id="form">
                         <TextField
                             className={classes.textField}
                             required
@@ -61,7 +61,7 @@ export default function Login(props) {
                             margin="normal"
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                        <Button onClick={handleLogin} className={classes.loginButton} variant="contained" color="primary" >
+                        <Button id="btn-login" onClick={handleLogin} className={classes.loginButton} variant="contained" color="primary" >
                             Ingresar
                         </Button>
                     </form>

@@ -6,6 +6,7 @@ import {
   FirebaseAppProvider
 } from 'reactfire'
 import firebaseConfig from './firebase/firebase-config'
+require('dotenv').config()
 
 const style = {
   width: '50%',
@@ -18,7 +19,7 @@ const style = {
 ReactDOM.render(
   <React.StrictMode>
     <FirebaseAppProvider firebaseConfig={firebaseConfig}>
-      <Suspense fallback={<img style={style} src={Spinner} />}>
+      <Suspense fallback={<img alt="loading" style={style} src={Spinner} />}>
         <App />
       </Suspense>
     </FirebaseAppProvider>
