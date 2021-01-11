@@ -27,15 +27,36 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const AddUbication = () => {
-  const url = `https://apis.datos.gob.ar/georef/api/provincias`
-  const [provinces, setProvinces] = useState()
+  const [provinces, setProvinces] = useState([])
+  const [location, setLocation] = useState([])
+  const [ubicationInfo, setUbicationInfo] = useState({
+    province: '',
+    location: '',
+    street: '',
+    height: '',
+    typeOfNeighborhood: ''
+  })
   const classes = useStyles()
+  const url = process.env.REACT_APP_API_GOB_AR
+  const urlLocation = `${url}/localidades?provincia=${ubicationInfo.province}&max=500`
 
-  const getProvinces = async () => {
-    const res = await fetch(url)
-    const resJSON = await res.json()
-    setProvinces(resJSON.provincias)
+  const handleChange = (e) => {
+    const { name, value, checked } = e.target
+    setUbicationInfo({ ...ubicationInfo, [name]: value || checked })
   }
+  const getProvinces = async () => {
+    const resProvince = await fetch(url + '/provincias')
+    const resProvinceJSON = await resProvince.json()
+    setProvinces(resProvinceJSON.provincias)
+  }
+
+  const getLocations = async () => {
+    const resLocation = await fetch(urlLocation)
+    const resLocationJSON = await resLocation.json()
+    setLocation(resLocationJSON.localidades)
+  }
+  console.log(location)
+
 
   useEffect(() => {
     getProvinces()
@@ -48,10 +69,35 @@ const AddUbication = () => {
           <Typography variant="h6" align="left" className={classes.typography}>
             Provincia
           </Typography>
-          {provinces["provincias"].map(province => (
-            <MenuItem>{province}</MenuItem>
-          ))
-          }
+          <Select
+            id="provincia"
+            labelId="provincia"
+            onChange={handleChange}
+            value={ubicationInfo.province}
+            name="province"
+          >
+            {provinces.map(province => (
+              <MenuItem value={province.nombre} key={province.id}>{province.nombre}</MenuItem>
+            ))
+            }
+          </Select>
+        </FormControl>
+        <FormControl className={classes.formControl} required disabled={ubicationInfo.province === ''} >
+          <Typography variant="h6" align="left" className={classes.typography}>
+            Localidad
+          </Typography>
+          <Select
+            id="location"
+            labelId="location"
+            onChange={handleChange}
+            value={ubicationInfo.location}
+            name="location"
+          >
+            {location.map(location => (
+              <MenuItem value={location.nombre} key={location.id}>{location.nombre}</MenuItem>
+            ))
+            }
+          </Select>
         </FormControl>
       </Container>
     </>

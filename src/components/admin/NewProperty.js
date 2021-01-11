@@ -35,8 +35,8 @@ export default function NewProperty(props) {
   const classes = useStyles()
   const [propertyInfo, setPropertyInfo] = useState({
     property: 'Casas',
-    unit: 'Casa',
-    operation: 'Alquiler',
+    unit: '',
+    operation: '',
     bathroom: false,
     numberOfBathrooms: 0,
     balcony: false,

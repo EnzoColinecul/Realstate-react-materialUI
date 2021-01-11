@@ -10,7 +10,7 @@ function TypeOfProperty(props) {
 
   if (typeOfProperty === 'Casas') {
     return (
-      <RadioGroup name="unit" onChange={handleChange} value={valueRadio} defaultValue="Casa" row color="primary">
+      <RadioGroup name="unit" onChange={handleChange} value={valueRadio} row color="primary">
         <FormControlLabel value="Casa" control={<Radio color="primary" />} label="Casa" />
         <FormControlLabel value="Triplex" control={<Radio color="primary" />} label="Triplex" />
         <FormControlLabel value="Prefabricada" control={<Radio color="primary" />} label="Prefabricada" />
