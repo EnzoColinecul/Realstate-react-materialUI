@@ -7,9 +7,11 @@ import {
   Typography
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
+
 import Header from '../header/Header'
 import NewProperty from './NewProperty'
 import AddUbication from './AddUbication'
+import UploadNumber from './UploadNumber'
 
 const useStyles = makeStyles((theme) => ({
   stepper: {
@@ -35,6 +37,9 @@ function getStepContent(step) {
     case 1:
       return <AddUbication />
       break;
+    case 2:
+      return <UploadNumber />
+      break;
     default:
       break;
   }
@@ -46,6 +51,7 @@ function Steps() {
 
   const handleNext = () => {
     setActiveStep(activeStep + 1)
+    console.log()
   }
 
   const handleBack = () => {

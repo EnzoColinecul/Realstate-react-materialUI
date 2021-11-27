@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Container,
   Typography,
@@ -30,7 +30,6 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-
 export default function NewProperty(props) {
   const classes = useStyles()
   const [propertyInfo, setPropertyInfo] = useState({
@@ -46,12 +45,25 @@ export default function NewProperty(props) {
   const handleChange = (e) => {
     const { name, value, checked } = e.target
     setPropertyInfo({ ...propertyInfo, [name]: value || checked })
+    console.log(propertyInfo)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(propertyInfo)
   }
+
+  useEffect(() => {
+    setPropertyInfo({
+      ...propertyInfo,
+      unit: '',
+      operation: '',
+      bathroom: '',
+      numberOfBathrooms: 0,
+      balcony: false,
+      numberOfBalconies: 0,
+    })
+  }, [propertyInfo.property])
 
   return (
     <>

@@ -23,6 +23,10 @@ const useStyles = makeStyles((theme) => ({
   },
   typography: {
     marginTop: theme.spacing(2)
+  },
+  textField: {
+    display: 'flex',
+    justifyContent: 'space-between'
   }
 }))
 
@@ -43,7 +47,9 @@ const AddUbication = () => {
   const handleChange = (e) => {
     const { name, value, checked } = e.target
     setUbicationInfo({ ...ubicationInfo, [name]: value || checked })
+    console.log(ubicationInfo)
   }
+
   const getProvinces = async () => {
     const resProvince = await fetch(url + '/provincias')
     const resProvinceJSON = await resProvince.json()
@@ -55,12 +61,13 @@ const AddUbication = () => {
     const resLocationJSON = await resLocation.json()
     setLocation(resLocationJSON.localidades)
   }
-  console.log(location)
 
-
-  useEffect(() => {
-    getProvinces()
-  }, [])
+  // useEffect(() => {
+  //   getProvinces()
+  //   if (ubicationInfo.province !== '') {
+  //     getLocations()
+  //   }
+  // }, [ubicationInfo.province])
 
   return (
     <>
@@ -98,6 +105,15 @@ const AddUbication = () => {
             ))
             }
           </Select>
+        </FormControl>
+        <FormControl className={classes.formControl} required disabled={ubicationInfo.province === ''} >
+          <Typography variant="h6" align="left" className={classes.typography}>
+            Direccion
+        </Typography>
+          <div className={classes.textField}>
+            <TextField error={ubicationInfo.location === '' && true} placeholder='Calle' name='street' onChange={handleChange} disabled={ubicationInfo.location === ''} required />
+            <TextField placeholder='altura' name='height' onChange={handleChange} disabled={ubicationInfo.location === ''} required />
+          </div>
         </FormControl>
       </Container>
     </>
